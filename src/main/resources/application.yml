@@ -1,0 +1,8 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 61923
+  docker:
+    compose:
+      file: "./compose.yaml"

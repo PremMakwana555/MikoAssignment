@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: 'redis:latest'
+    ports:
+      - 6379:6379
+
+  app:
+    image: 'mikoai:latest'
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
+    environment:
+      - spring.profiles.active=docker
